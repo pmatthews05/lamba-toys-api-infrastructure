@@ -1,0 +1,41 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "uksouth"
+        },
+        "prefix": {
+            "value": "cf-lambda-api-dev"
+        },
+        "vNetId": {
+            "value": "/subscriptions/e6caedae-63ee-4b15-b619-a8018ca91d62/resourceGroups/cf-lambda-api-dev/providers/Microsoft.Network/virtualNetworks/cf-lambda-api-dev-vnet"
+        },
+        "containerRegistryName": {
+            "value": "cflambdaapidevacr"
+        },
+        "containerRegistryUserName": {
+            "value": "cflambdaapidevacr"
+        },
+        "containerVersion": {
+            "value": "1.9.0"
+        },
+        "cosmosAccountName": {
+            "value": "cf-lambda-api-dev-cosmos-account"
+        },
+        "cosmosDbName": {
+            "value": "cf-lambda-api-dev-sqldb"
+        },
+        "cosmosContainerName": {
+            "value": "cf-lambda-api-dev-state"
+        },
+        "containerRegistryPassword":{
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/e6caedae-63ee-4b15-b619-a8018ca91d62/resourceGroups/cf-lambda-api-dev/providers/Microsoft.KeyVault/vaults/cf-lambda-api-dev-kv"
+                },
+                "secretName": "acrAdminPassword"
+            }
+        }
+    }
+}
